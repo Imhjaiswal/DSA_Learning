@@ -1,10 +1,17 @@
 package BinarySearch;
 
 public class SearchInRotatedSortedArray2 {
+    // BRUTEFORCE - USING LINEAR SEARCH
+    // T.C. - O(N) & O(1)
+
+    // OPTIMAL
+    // T.C. - O(LogN) & S.C. - O(1)
     boolean search (int nums[], int target) {
         int n = nums.length;
 
-        if ((n == 1 && nums[0] != target) || n == 0) return false;
+        if (nums == null || n == 0) return false;
+
+        if (n == 1 && nums[0] != target) return false;
 
         if (n == 1 && nums[0] == target) return true;
 
