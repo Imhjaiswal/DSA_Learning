@@ -43,9 +43,9 @@ public class Sort0s1sAnd2s {
         return head;
     }
 
-    // BETTER
+    // OPTIMAL
     // T.C. - O(N) & S.C. - O(1)
-    Node better (Node head) {
+    Node optimal (Node head) {
         if (head == null || head.next == null) return head;
 
         Node dummyZero = new Node(-1);
@@ -79,36 +79,5 @@ public class Sort0s1sAnd2s {
         two.next = null;
 
         return dummyZero.next;
-    }
-
-    // OPTIMAL
-    // T.C. - O() & S.C. - O()
-    Node optimal (Node head) {
-        if (head == null || head.next == null) return head;
-
-        Node zero = new Node(-1);
-        Node zeroHead = zero;
-        Node one = new Node(-1);
-        Node two = new Node(-1);
-
-        Node temp = head;
-
-        while (temp != null) {
-            if (temp.data == 0) {
-                zero.next = temp;
-                zero = zero.next;
-            } else if (temp.data == 1) {
-                one.next = temp;
-                one = one.next;
-            } else {
-                two.next = temp;
-                two = two.next;
-            }
-
-            temp = temp.next;
-        }
-        
-
-        return zeroHead.next;
     }
 }

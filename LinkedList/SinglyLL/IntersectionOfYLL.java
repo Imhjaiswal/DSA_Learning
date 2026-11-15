@@ -1,8 +1,6 @@
 package LinkedList.SinglyLL;
 
-import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Map;
 
 import LinkedList.SinglyLL.SinglyLinkedList.Node;
 

@@ -21,44 +21,39 @@ public class RemoveNthNodeFromEnd {
 
         if (N == count) return head.next;
 
-        int nodeBeforeDelete = count - N;
         temp = head;
-        int newCount = 0;
 
-        while (temp != null) {
-            newCount++;
-            if (newCount == nodeBeforeDelete) {
-                temp.next = temp.next.next;
-                break;
-            }
+        for (int i=1; i<=count-N; i++) {
             temp = temp.next;
         }
+
+        temp.next = temp.next.next;
 
         return head;
     }
 
     // Optimal
-    // T.C. - & S.C. -
+    // T.C. - O(N) & S.C. - O(1)
     Node optimal (Node head, int N) {
         if (head == null || N <= 0) return head;
 
-        Node fast = head;
-        Node slow = head;
+        Node dummy = new Node(-1);
+        dummy.next = head;
+        Node fast = dummy;
+        Node slow = dummy;
 
-        for (int i=1; i<=N; i++) {
+        for (int i=0; i<=N; i++) {
             if (fast == null) return head;
             fast = fast.next;
         }
 
-        if (fast == null) return head;
-
-        while (fast.next != null) {
+        while (fast != null) {
             fast = fast.next;
             slow = slow.next;
         }
         
         slow.next = slow.next.next;
 
-        return head;
+        return dummy.next;
     }
 }

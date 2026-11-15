@@ -16,15 +16,15 @@ public class OddEvenLL {
         Node temp = head;
         while (temp != null) {
             list.add(temp.data);
-            if (temp.next != null) break;
+            if (temp.next == null) break;
             temp = temp.next.next;
         }
 
         // EVEN POSITIONS
         temp = head.next;
-        while (temp != null && temp.next != null) {
+        while (temp != null) {
             list.add(temp.data);
-            if (temp.next != null) break;
+            if (temp.next == null) break;
             temp = temp.next.next;
         }
 

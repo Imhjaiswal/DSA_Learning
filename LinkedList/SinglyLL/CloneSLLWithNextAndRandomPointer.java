@@ -2,7 +2,6 @@ package LinkedList.SinglyLL;
 
 import java.util.HashMap;
 
-import LinkedList.SinglyLL.SinglyLinkedList.Node;
 import LinkedList.SinglyLL.SinglyLinkedList.RNode;
 
 public class CloneSLLWithNextAndRandomPointer {

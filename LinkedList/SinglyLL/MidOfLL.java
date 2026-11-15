@@ -26,9 +26,9 @@ public class MidOfLL {
         return temp;
     }
 
-    // BETTER
+    // Optimal
     // T.C. - O(N/2) & S.C. - O(1)
-    Node better (Node head) {
+    Node optimal (Node head) {
         if (head == null || head.next == null) return head;
 
         Node slow = head;
